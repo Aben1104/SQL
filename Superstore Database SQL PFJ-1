@@ -45,3 +45,36 @@ FROM superstore;
 SELECT SUM(price)
 FROM superstore
 WHERE category='Kitchen Supplies';
+
+#List All Products: "Can you show me all the products in our inventory?"
+SELECT *
+FROM superstore;
+
+#Count of Products in Each Category: "How many products are there in each category?"
+SELECT category, COUNT (*)
+FROM superstore
+GROUP BY category;
+
+#Find Products Below a Certain Price: "Which products cost less than $100?"
+SELECT *
+FROM superstore
+WHERE price < 100;
+
+SELECT *
+FROM superstore
+WHERE price < 100
+ORDER BY price desc;
+
+#Average Stock Quantity: "What is the average stock quantity of our products?"
+SELECT AVG(stock_quantity)
+FROM superstore;
+
+#List of Products with Low Stock: "Which products have a stock quantity of 25 or less?"
+SELECT *
+FROM superstore
+WHERE stock_quantity <= 25;
+
+#Find Specific Product Information: "Can you provide details for the 'Smart LED TV'?"
+SELECT *
+FROM superstore
+WHERE item_name = 'Smart LED TV';
